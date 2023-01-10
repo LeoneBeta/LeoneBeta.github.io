@@ -39,7 +39,7 @@ def callApi(reply):
     time.sleep(0.5)
 
     if resp["countryName"] != "-":
-        currentIP = {"IP": resp["ipAddress"], "Country": {"CName": resp["countryName"], "RName": resp["regionName"]}}
+        currentIP = {"IP": resp["ipAddress"], "Country": {"CName": resp["countryName"], "RName": resp["regionName"]}, "Coord": {"lat": resp["lat"], "lon": resp["lon"]}}
         list_Ips.append(currentIP)
 
     return list_Ips
