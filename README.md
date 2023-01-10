@@ -1,19 +1,18 @@
 # Trabalho prático individual - WebServices
-Trabalho prático de WebService utilizando duas ou mais APIs.
-Esse trabalho é a implementação do modo gráfico do comando (mtr/traceroute/tracert)
-dependendo do Sistema Operacional utilizado implementando também a geolocalização de
-cada roteador encontrado no caminho.
-Com a utilização da biblioteca scapy fazendo a construção do cabeçalho dos pacotes,
-a aplicação cria os pacotes e os envia com o ip de destino fornecido, como um traceroute
-normal aumentando de um em um o TTL (Time To Live) do pacote tendo a cada retorno
-possívelmente o IP do roteador em que ele morreu caso o mesmo não esteja como oculto
-na rede.
+Trabalho prático de WebService utilizando duas ou mais APIs, essa aplicação é a
+implementação do modo gráfico do comando (mtr/traceroute/tracert) dependendo do
+Sistema Operacional utilizado implementando também a geolocalização de cada
+roteador encontrado no caminho. Com a utilização da biblioteca scapy fazendo a
+construção do cabeçalho dos pacotes, a aplicação cria os pacotes e os envia com
+o ip de destino fornecido, como um traceroute normal aumentando de um em um o TTL
+(Time To Live) do pacote tendo a cada retorno possívelmente o IP do roteador em
+que ele morreu caso o mesmo não esteja como oculto na rede.
+
 O site criado recolhe o ip fornecido pelo usuário e acessa a API criada em python passando
 o IP como parâmetro, esse ip é utilizado para o traceroute como anteriormente citado,
 cada resposta com ip válido é feito uma requisição para API IPInfoDB, que retorna a 
-localização geográfica do roteador encontrado.
-É feito o tratamento dessa resposta e então a API retorna para o site os roteadores não
-ocultos e suas respectivas localizações. 
+localização geográfica do roteador encontrado. É feito o tratamento dessa resposta e
+então a API retorna para o site os roteadores não ocultos e suas respectivas localizações. 
 
 Pela utilização da biblioteca Scapy que trabalha nas camadas inferiores de rede, o
 projeto deve ser executado em modo root, no linux podemos colocar o comando sudo
