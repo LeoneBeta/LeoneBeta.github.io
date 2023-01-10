@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GeoIP - Location</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="theme/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="theme/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">GeoIP Location</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Seu traceroute mais completo</h5>
+        </div>
+        <div class="row center">
+          <a href="Projeto/site/index-map.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Site Oficial</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="theme/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Scapy</h5>
+
+            <p class="light">O primeiro passo é saber por onde seus pacotes passam, assim foi utilizado a biblioteca SCAPY da linguagem python para fazer a criação dos pacotes personalizados onde temos o controle de todas as informações dentro deles, incluindo o TTL (Time To Live), responsável pelo número de "saltos" possível que o pacote pode dar, assim, temos como resposta desses envios, os roteadores por todo o caminho entre sua localização atual e o IP de destino fornecido no site.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">API IPInfoDB</h5>
+
+            <p class="light">Essa API recebe como parâmetro os IPs adquiridos pelo SCAPY então retorna dados geográficos a espeito desses IPs, como, país, estado, cidade e coordenadas geograficas. Esses dados são tratados e separados pois pode ocorrer que alguns roteadores encontrados pelo SCAPY estejam ocultos, então seus dados de localização serão retornados como vazio.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">MY API</h5>
+
+            <p class="light">Após o tratamento do resultado da API IPInfoDB, esses dados precisam ser passados para nosso site, uma aplicação simples utilizando HTML, CSS e JS, então utilizando a biblioteca Flask que nos possibilita criarmos nosssa própria API, a utilizamos para que a aplicação web envie sua requisição contendo o IP de destino para nossa API, que o retorna com os IPs encontrados pelo caminho e suas respectivas localizações.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Utilizando a API para Aplicações Web</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="theme/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Aplicação Web</h4>
+          <p class="left-align light">Nossa Aplicação Web Trabalha utilizando uma API de geração de mapa para dar corpo ao projeto, fazemos a requisição a nossa API enviando um IP de destino desejado para busca e retorna os dados dos roteadores entre sua localização atual e o destino solicitado, assim a aplicação web faz o tratamento dessa entrada utilizado os dados para traçar no mapa a rota onde o pacote percorreu.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  
+  </body>
+</html>
